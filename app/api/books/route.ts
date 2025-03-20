@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
 
   const search = request.nextUrl.searchParams.get("search") || "";
   const page = parseInt(request.nextUrl.searchParams.get("page") || "1", 10);
-  const limit = 5; // Number of books per page
+  const limit = 13; // Number of books per page
 
   // Count total books matching the search query
   const totalBooks = await Book.countDocuments({
