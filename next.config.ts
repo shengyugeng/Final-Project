@@ -1,11 +1,14 @@
+import dotenv from "dotenv";
+
+dotenv.config();
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   eslint: {
-    ignoreDuringBuilds: true, // ✅ Force-ignore ESLint errors
+    ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true, // ✅ Ignore TypeScript errors
+    ignoreBuildErrors: true,
   },
 };
 

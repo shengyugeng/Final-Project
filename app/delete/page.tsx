@@ -10,12 +10,12 @@ interface Book {
 }
 
 export default function DeleteBookPage() {
-  const [books, setBooks] = useState<Book[]>([]); // ✅ Explicitly define the type
+  const [books, setBooks] = useState<Book[]>([]); // Explicitly define the type
 
   const fetchBooks = async () => {
     const res = await fetch("/api/books");
     const data = await res.json();
-    setBooks(data.books as Book[]); // ✅ Explicitly cast the fetched data
+    setBooks(data.books as Book[]); // Explicitly cast the fetched data
   };
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function DeleteBookPage() {
       <ul>
         {books.map(
           (
-            book: Book // ✅ Explicitly tell TypeScript that book is of type Book
+            book: Book //  Explicitly tell TypeScript that book is of type Book
           ) => (
             <li key={book._id} className="flex justify-between p-2 border-b">
               {book.title} by {book.author} (${book.price})
